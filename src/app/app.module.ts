@@ -9,6 +9,11 @@ import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { AngularFireDatabaseModule } from "@angular/fire/database";
+import { AngularFireModule } from "@angular/fire";
+import { environment } from "../environments/environment";
+
+import { TermometrofireService } from "./services/termometrofire.service";
 
 @NgModule({
   declarations: [
@@ -20,9 +25,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     FormsModule,
     ToastrModule.forRoot({ positionClass: 'toast-top-right', timeOut: 4000 }), // ToastrModule added
-    BrowserAnimationsModule // required animations module
+    BrowserAnimationsModule, // required animations module
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [TermometrofireService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

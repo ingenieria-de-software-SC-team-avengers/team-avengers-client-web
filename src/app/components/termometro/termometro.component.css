@@ -1,0 +1,47 @@
+.card {
+    max-width: 300px;
+    width: 100%;
+    margin: auto;
+}
+
+.card-body {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 0.5em;
+}
+
+.card-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 0.5em;
+}
+
+.tempText {
+    justify-self: center;
+}
+
+.tempText p:first-child {
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.tempText p:last-child {
+    text-align: center;
+    font-size: 0.8em;
+}
+
+h3 {
+    text-align: center;
+}
+
+@media (min-width: 425px) {
+    .tempText p:first-child {
+        font-size: 3em;
+        text-align: center;
+    }
+    .tempText p:last-child {
+        text-align: center;
+    }
+}

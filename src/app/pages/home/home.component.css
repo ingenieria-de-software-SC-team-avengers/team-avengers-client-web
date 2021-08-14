@@ -1,0 +1,12 @@
+.texto-emotivo {
+    max-width: 768px;
+    align-self: center;
+    justify-self: center;
+    grid-area: texto;
+  }
+
+  .texto-emotivo p:last-child {
+    font-style: italic;
+    max-width: 500px;
+    margin: auto;
+  }
