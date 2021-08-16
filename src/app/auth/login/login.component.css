@@ -1,0 +1,7 @@
+.card .row {
+    min-height: 504px;
+}
+
+input {
+    margin-top: 24px !important;
+}

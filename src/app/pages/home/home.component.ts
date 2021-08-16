@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserData } from "../../models/userData.model";
+import { AuthService } from "../../services/auth.service";
 
 @Component({
   selector: 'app-home',
@@ -8,16 +9,13 @@ import { UserData } from "../../models/userData.model";
 })
 export class HomeComponent implements OnInit {
 
-  userData: UserData;
+  userData: any = {};
 
-  constructor() { }
-
-  ngOnInit(): void {
-    this.recuperarUser();
+  constructor(private authServices: AuthService) {
+    this.userData = JSON.parse(localStorage.getItem('user') || '{}');
   }
 
-  recuperarUser(){
-
+  ngOnInit(): void {
   }
 
 }

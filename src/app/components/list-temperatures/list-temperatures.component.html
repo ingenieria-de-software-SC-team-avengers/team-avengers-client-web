@@ -1,0 +1,16 @@
+<table class="table shadow">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Nro</th>
+            <th scope="col">Temperatura</th>
+            <th scope="col">Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let temp of temperaturas; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{temp}}</td>
+            <td>Otto</td>
+        </tr>
+    </tbody>
+</table>

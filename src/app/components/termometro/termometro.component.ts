@@ -2,6 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TermometrofireService } from '../../services/termometrofire.service';
 import Temperatura from '../../models/temperatura.model';
 import { Subscription } from 'rxjs';
+import { ToastrService } from "ngx-toastr";
+import { tempSensor } from '../../models/temperatureSensor.model';
+import { UserData } from '../../models/userData.model';
 
 @Component({
   selector: 'app-termometro',
@@ -13,13 +16,19 @@ export class TermometroComponent implements OnInit, OnDestroy {
   temperaturaCorporal: number;
   fireSubscription: Subscription;
   medirTemperatura = false;
+  userData: any = {};
 
-  constructor(private temperaturaService: TermometrofireService) {
+  constructor(
+    private temperaturaService: TermometrofireService,
+    private toast: ToastrService
+    ) {
     this.temperaturaCorporal = 0;
+    this.userData = JSON.parse(localStorage.getItem('user') || '{}');
   }
 
   ngOnInit(): void {
       this.obtenerTemperatura();
+      //console.log(this.userData.username);
   }
 
   ngOnDestroy(): void {
@@ -39,13 +48,21 @@ export class TermometroComponent implements OnInit, OnDestroy {
         this.temperatura = data.payload.toJSON();
         if (Math.floor(this.temperatura) < 42 && this.medirTemperatura == true) {
           this.temperaturaCorporal = Math.floor(this.temperatura);
-          console.log(this.temperaturaCorporal);
+          //console.log(this.temperaturaCorporal);
         }
       });
   }
 
   registraTemperatura(){
-    this.medirTemperatura = false;
-    console.log(this.medirTemperatura);
+    const tempSensor: tempSensor = {
+      valor: this.temperaturaCorporal,
+      username: this.userData.username
+    }
+
+    this.temperaturaService.registerTemperature(tempSensor).subscribe((res: any) => {
+      this.toast.success(res.message);
+    }, error => {
+      this.toast.warning('Error no se pudo guardar los datos');
+    });
   }
 }
