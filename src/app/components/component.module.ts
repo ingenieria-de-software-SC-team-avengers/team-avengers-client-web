@@ -7,18 +7,29 @@ import { TutorialDetailsComponent } from './tutorial-details/tutorial-details.co
 import { TutorialListComponent } from './tutorial-list/tutorial-list.component';
 import { FormsModule } from '@angular/forms';
 import { ListTemperaturesComponent } from './list-temperatures/list-temperatures.component';
+import { CreateClinicComponent } from './create-clinic/create-clinic.component';
+import { SharedModule } from '../shared/shared.module';
+import { RegisterDoctorComponent } from './register-doctor/register-doctor.component';
 
 
 
 @NgModule({
-  declarations: [TermometroComponent, AddTutorialComponent, TutorialDetailsComponent, TutorialListComponent, ListTemperaturesComponent],
+  declarations: [
+    TermometroComponent, 
+    AddTutorialComponent, 
+    TutorialDetailsComponent, 
+    TutorialListComponent, 
+    ListTemperaturesComponent, 
+    CreateClinicComponent, RegisterDoctorComponent],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   exports: [
     TermometroComponent,
-    ListTemperaturesComponent
+    ListTemperaturesComponent,
+    CreateClinicComponent
   ]
 })
 export class ComponentModule { }

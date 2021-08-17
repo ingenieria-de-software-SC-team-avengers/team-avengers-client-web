@@ -1,0 +1,33 @@
+<app-header></app-header>
+<body class="style">
+    
+    <div class="container ">
+        <div class="row justify-content-center ">
+            <div class="col-lg-4 col-md-8 col-sm-8 margin">
+    
+                <div class="card shadow">
+                    <div class="card-tittle text-center border-bottom">
+                        <h2 class="p-3">Registro de Clinica</h2>
+                    </div>
+                    <div class="card-body">
+                        <form >
+                                <div class="mb-4">
+                                    <label for="name" class="form-label">Nombre de la Clinica</label>
+                                    <input type="text" class="form-control" id="name" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="address" class="form-label">Dirección de la Clínica</label>
+                                    <input type="text" class="form-control" id="address" [(ngModel)]="address" [ngModelOptions]="{standalone: true}">
+                                </div>
+                                <div class="center">
+                                    <button type="submit"  (click)="post_clinic()" class="btn btn-primary ">Registrar</button>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    
+</body>
