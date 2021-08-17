@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-gradient-info shadow">
+    <a href="/client/inicio" class="navbar-brand">
+        <img src="../../../assets/img/software.png" height="40" alt="Página principal Comfeco" title="Ir a página de inicio" />
+    </a>
+    <div class="d-none d-md-block">
+        <div class="navbar-nav pl-3">
+            <a class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/client/home']" [routerLinkActiveOptions]=" {exact:true} ">
+              Termometro
+            </a>
+            <a class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/client/temperaturas']" [routerLinkActiveOptions]=" {exact:true} ">
+              Temperaturas
+            </a>
+            <a class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/client/registrar']" [routerLinkActiveOptions]=" {exact:true} ">
+              Registrar clinica y Doctor
+            </a>
+            <a class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/client/chatbot']" [routerLinkActiveOptions]=" {exact:true} ">
+              ChatBot
+            </a>
+        </div>
+    </div>
+    <!-- Topbar Navbar -->
+    <ul class="navbar-nav ml-auto">
+        <!-- Nav Item - User Information -->
+        <li class="nav-item dropdown no-arrow">
+            <span class="mr-2 d-none d-lg-inline text-gray-900 small"> {{nameComplete}} </span>
+            <img class="img-profile rounded-circle" src="https://media.revistagq.com/photos/5f1e923e3c95260b5c5ad9dc/4:3/w_1124,h_843,c_limit/superman-traje-negro.jpg">
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right popup shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a (click)="logoutClick()" class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Cerrar sesión
+                </a>
+            </div>
+        </li>
+    </ul>
+</nav>
+<!-- End of Topbar -->

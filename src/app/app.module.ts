@@ -14,6 +14,7 @@ import { AngularFireModule } from "@angular/fire";
 import { environment } from "../environments/environment";
 
 import { TermometrofireService } from "./services/termometrofire.service";
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TermometrofireService } from "./services/termometrofire.service";
     ToastrModule.forRoot({ positionClass: 'toast-top-right', timeOut: 4000 }), // ToastrModule added
     BrowserAnimationsModule, // required animations module
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    SharedModule
   ],
   providers: [TermometrofireService],
   bootstrap: [AppComponent]

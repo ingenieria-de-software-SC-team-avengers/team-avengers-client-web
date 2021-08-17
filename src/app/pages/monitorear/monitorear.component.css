@@ -1,0 +1,22 @@
+.list-termometro {
+    grid-area: listTermometro;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    grid-area: title;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-fluid {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 1fr;
+    grid-template-areas: "title title" "listTermometro listTermometro";
+    row-gap: 1em;
+    column-gap: 1em;
+    max-width: 1300px;
+}

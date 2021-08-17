@@ -7,10 +7,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let temp of temperaturas; let i = index">
+        <tr *ngFor="let temp of temperaturas; index as i">
             <th scope="row">{{i+1}}</th>
-            <td>{{temp}}</td>
-            <td>Otto</td>
+            <td>{{temp.valor}}</td>
+            <td>{{temp.fecha | date:'yyyy-MM-dd HH:mm'}}</td>
         </tr>
     </tbody>
 </table>

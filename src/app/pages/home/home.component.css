@@ -34,7 +34,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 300px 80px 1fr;
-    grid-template-areas: "termometro termometro" "title title" "listTermometro listTermometro";
+    grid-template-areas: "termometro termometro";
     row-gap: 1em;
     column-gap: 1em;
     max-width: 1300px;
